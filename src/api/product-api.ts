@@ -47,10 +47,17 @@ const saveProduct = (productToSave: Product) => {
 	return axios.put(`${API_PATHS.product}/products`, productToSave);
 };
 
+const createProduct = (productToSave: Product) => {
+	console.info(`PUT saveProduct: ${JSON.stringify(productToSave)}`);
+
+	return axios.post(`${API_PATHS.product}/products`, productToSave);
+};
+
 export const productApi = {
 	fetchAvailableProducts,
 	deleteProductById,
 	fetchProducts,
 	fetchProductById,
 	saveProduct,
+	createProduct,
 };
